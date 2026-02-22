@@ -1,0 +1,71 @@
+# The file identification module can identify dependencies for a file type.
+# these dependency strings can be mapped to machine tags here. Identified tags will be automatically
+# used when creating a task to ensure the correct analysis machine is used.
+tags:
+  office:
+    - microsoft_word
+    - microsoft_excel
+    - microsoft_powerpoint
+  dotnet:
+    - microsoft_dotnet
+  powershell:
+    - powershell
+  pdfreader:
+    - acrobat_reader
+  flash:
+    - flash
+  java:
+    - oracle_java
+  ruby:
+    - ruby
+  perl:
+    - perl
+  python:
+    - python
+  mediaplayer:
+    - mediaplayer
+  quicktime:
+    - quicktime
+  ace:
+    - ace
+  arc:
+    - arc
+  unarchive:
+    - unarchive
+
+# Log the filenames of files that have not been identified during identification. This can help to find
+# interesting files that are not supported yet. This can be noisy.
+log_unidentified: False
+
+# Settings that influence which identified file is automatically selected for
+# analysis. This only applies if a file is not manually chosen.
+selection:
+  # What is the order of priority of the file type extensions. This applies
+  # in cases where multiple files can be selected (when archives are submitted, for example).
+  # Enter without a dot. In cases where the submitted file itself
+  # is selected/interesting, it will always have priority (OOXML, Jar files for example).
+  extension_priority:
+  - exe
+  - msi
+  - docm
+  - dotm
+  - doc
+  - xlam
+  - xlsm
+  - xlsb
+  - xls
+  - ppsm
+  - pptm
+  - ppt
+  - ps1
+  - vbs
+  - bat
+  - hta
+  - jar
+  - iqy
+  - slk
+  - wsf
+  - lnk
+  - url
+  - pdf
+  - dll

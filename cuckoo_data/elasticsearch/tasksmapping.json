@@ -1,0 +1,45 @@
+{
+  "mappings": {
+    "properties": {
+      "ts": {"type": "long"},
+      "task_id": {
+        "type": "keyword"
+      },
+      "analysis_id": {
+        "type": "keyword"
+      },
+      "score": {
+        "type": "integer"
+      },
+      "machine": {
+        "properties": {
+          "platform": {
+            "type": "keyword"
+          },
+          "os_version": {
+            "type": "keyword"
+          },
+          "tags": {
+            "type": "text"
+          }
+        }
+      },
+      "signatures": {
+        "properties": {
+          "name": {
+            "type": "keyword"
+          }
+        }
+      },
+      "tags": {
+        "type": "keyword"
+      },
+      "families": {
+        "type": "keyword"
+      },
+      "ttps": {
+        "type": "keyword"
+      }
+    }
+  }
+}

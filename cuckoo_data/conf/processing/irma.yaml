@@ -1,0 +1,35 @@
+# Enable or disable Irma usage during processing. Module performs hash and url lookups for submissions.
+enabled: False
+
+# What amount of AV engines should mark a sample as malicious for Cuckoo to
+# mark it as suspicious? Take into account that false positives happen.
+min_suspicious: 3
+
+# What amount of AV engines should mark a sample as malicious for Cuckoo to
+# mark it as malicious? Take into account that false positives happen.
+min_malicious: 5
+
+# How much time we can wait to establish IRMA connection and get the report.
+timeout: 60
+
+# Enable this option if you want to submit files to IRMA not yet available.
+scan: False
+
+# Force scan of submitted files
+force: False
+
+# URL to your IRMA installation
+# For example : https://your.irma.host
+url: null
+
+# Probes to use on your IRMA instance
+# If not specified, will default to using all available probes
+# Expects comma separated list
+# For example : ClamAV,F-Secure,Avast,ESET,eScan,Avira,Sophos,McAfee,Kaspersky,GData,Comodo,Bitdefender
+probes: null
+
+#unknown, webui, probe_result, cli, kiosk, suricata
+submitter: null
+
+# Rescan time in minutes
+rescan_time: 15

@@ -1,0 +1,26 @@
+# Cuckoo data
+cuckoo_data/storage/
+cuckoo_data/db/
+cuckoo_data/log/
+cuckoo_data/operational/
+cuckoo_data/.cuckoocwd
+cuckoo_data/cuckoo.db
+
+# Keep templates in conf (optional, user can decide)
+# cuckoo_data/conf/
+
+# MongoDB data
+mongo_data/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+
+# OS files
+.DS_Store
+Thumbs.db

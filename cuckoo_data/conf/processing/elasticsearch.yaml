@@ -1,0 +1,27 @@
+# Elasticsearch reporting
+# Enable/disable the Elasticsearch indexing of analyses, task, and
+# event information. Web search and statistics can only be used
+# if the configured Elasticsearch instance is populated with results.
+enabled: False
+
+indices:
+  # The names to use when creating indices. Each name must be unique.
+  names:
+    analyses: analyses
+    tasks: tasks
+    events: events
+
+# The timeout before a connection error occurs during the indexing of a document.
+# The Elasticsearch default is 10 seconds. A higher timeout is required when indexing large documents.
+timeout: 300
+
+# The max result window that will be used in searches. The Elasticsearch default is 10000. This
+# window has impact in how far back you can search with queries that match a large amount of documents.
+max_result_window: 10000
+user: null
+password: null
+ca_certs: /etc/ssl/certs/ca-certificates.crt
+
+# The Elasticsearch hosts. Should be one ore more host:port combinations.
+hosts:
+- http://127.0.0.1:9200

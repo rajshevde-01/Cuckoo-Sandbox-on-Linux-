@@ -1,0 +1,15 @@
+# Enable or disable VirusTotal usage during processing. Module performs hash and url lookups for submissions.
+enabled: True
+
+# The VirusTotal API key to use. The default API key, kindly provided
+# by the VirusTotal team, should enable you with a sufficient throughput
+# and while being shared with all our users, it should not affect your use.
+key: a0283a2c3d55728300d064874239b5346fb991317e8449fe43c902879d758088
+
+# What amount of AV engines should mark a sample as malicious for Cuckoo to
+# mark it as suspicious? Take into account that false positives happen.
+min_suspicious: 3
+
+# What amount of AV engines should mark a sample as malicious for Cuckoo to
+# mark it as malicious? Take into account that false positives happen.
+min_malicious: 5

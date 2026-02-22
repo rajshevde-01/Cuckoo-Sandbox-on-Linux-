@@ -1,0 +1,14 @@
+# A dictionary list of remote Cuckoo instances that are running in node mode.
+# This is used in a distributed Cuckoo setup.
+remote_nodes:
+  example1:
+    # The remote node API url. This is not the Cuckoo API.
+    api_url: http://127.0.0.1:8090
+    # Remote node API key.
+    api_key: examplekey
+
+# The settings used if the Cuckoo install is started as a Cuckoo node.
+node_settings:
+  # The node API key. This must be configured in the main Cuckoo's
+  # remote_nodes configuration section.
+  api_key: c3e1f16beeca908e7da474b7478f177822ff8858d2557e825b250ceb0342dbdb

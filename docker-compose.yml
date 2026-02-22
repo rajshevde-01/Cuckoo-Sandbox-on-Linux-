@@ -1,0 +1,30 @@
+services:
+  cuckoo:
+    build: .
+    container_name: cuckoo_host
+    ports:
+      - "8000:8000"
+      - "8090:8090"
+    volumes:
+      - ./cuckoo_data:/home/cuckoo/.cuckoo
+      # - /var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock # If using KVM
+      # - /var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock # If using KVM
+    depends_on:
+      - mongodb
+      - redis
+    environment:
+      - CUCKOO_APP=cuckoo
+      - CUCKOO_CWD=/home/cuckoo/.cuckoo
+
+  mongodb:
+    image: mongo:4.4
+    volumes:
+      - ./mongo_data:/data/db
+
+  redis:
+    image: redis:alpine
+
+# Note regarding network_mode: host
+# This is used to allow the container to easily access the
+# VirtualBox Web Service running on localhost:18083 without complex bridge networking.
+# If you prefer bridge, you must configure cuckoo.conf machinary to point to host IP (172.17.0.1 or similar).

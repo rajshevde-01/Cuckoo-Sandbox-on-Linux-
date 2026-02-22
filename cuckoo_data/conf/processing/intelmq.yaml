@@ -1,0 +1,48 @@
+
+processing:
+  enabled: False
+
+  # The IntelMQ Elasticsearch hosts. Should be one ore more host:port combinations.
+  hosts:
+    - http://127.0.0.1:9200
+
+  # The (wildcard) name of the index the IntelMQ events are stored in.
+  index_name: null
+
+  # The maximum amount of queries to perform per IOC type.
+  query_limit: 10
+
+  # The maximum amount of matching events for per IOC type that should
+  # be asked from the IntelMQ Elasticsearch.
+  event_limit: 1
+
+  # (optional) The base URL of a Elasticsearch host that will be used to
+  # create a link to the Elasticsearch document. These links are
+  # part of the report and UI. Do not include credentials.
+  link_url: null
+  user: 
+  password: 
+  ca_certs: 
+
+reporting:
+  enabled: False
+
+  # The url of the host that runs the collector API.
+  api_url: null
+
+  # Verify if the configured IntelMQ API is using a valid TLS certificate.
+  # Disable this your certificate is self-signed or no certificate is used.
+  verify_tls: True
+
+  # The minimum Cuckoo score a task must have before discovered
+  # IOCs are reported to IntelMQ.
+  min_score: 7
+
+  # The base URL of your running Cuckoo web instance. This is used to create
+  # links to reported tasks in a event_description.url field.
+  web_baseurl: null
+
+  feed_accuracy: null
+
+  # A event_description.text description that is added to each created event
+  event_description: Cuckoo 3 behavioral analysis

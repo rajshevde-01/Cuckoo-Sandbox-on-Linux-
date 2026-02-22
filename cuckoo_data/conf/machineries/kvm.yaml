@@ -1,0 +1,41 @@
+# Specify a Libvirt URI connection string
+dsn: "qemu:///system"
+
+# Specify the name of a network interface that the machines are connected to/traffic is routed over.
+# This interface is used to create network traffic dumps during analyses.
+# Example: virbr0
+interface: virbr0
+
+machines:
+  example1:
+    # The identifier of the machine that the hypervisor knows. Cuckoo will use it
+    # to ask the hypervisor to start this specific machine.
+    label: example1
+    # The static IP address that has been configured inside of the machine.
+    ip: 192.168.122.101
+    # The operating system platform installed on the machine.
+    platform: windows
+    # A string that specifies the version of the operating system installed.
+    # Example: "10" for Windows 10, "7" for Windows 7, "18.04" for Ubuntu 18.04.
+    os_version: "10"
+    # The system architecture. Amd64, ARM, etc. This is used to
+    # select the correct stager and monitor builds/component for the machine.
+    architecture: amd64
+    # The TCP port of the agent running on the machine.
+    agent_port: 8000
+    # (Optional) The MAC address of the network interface of the machine that is used to connect to
+    # to the resultserver and the internet.
+    mac_address: null
+    # (Optional) a named snapshot that Cuckoo must restore the machine to
+    # after each analysis. If this snapshot is not provided, a 'current' snapshot must be set.
+    snapshot: null
+    # (Optional) Specify the name of the network interface that should be used
+    # when dumping network traffic from this machine with tcpdump.
+    interface: null
+    # Machine tags that identify the installed software and other characteristics of the machine.
+    # These are used to select the correct machine for a sample that has dependencies. *Notice*: correct tags are
+    # crucial in selecting machines that can actually run a submitted sample.
+    # Existing automatic tags can be found in the conf/processing/identification.yaml config.
+    tags:
+    - exampletag1
+    - exampletag2
