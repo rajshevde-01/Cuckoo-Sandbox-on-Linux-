@@ -1,4 +1,4 @@
-# Cuckoo Sandbox Setup Automation (Project 2)
+# Cuckoo Sandbox Setup Automation
 
 Automated scripts and documentation for setting up Cuckoo Sandbox on Ubuntu 22.04.
 
