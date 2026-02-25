@@ -7,7 +7,7 @@ This guide details how to prepare a Windows Virtual Machine for malware analysis
 - **Name**: `cuckoo-guest` (must match `cuckoo.conf` later)
 - **OS**: Windows 7 (preferred) or Windows XP (classic)
 - **RAM**: 1024 MB - 2048 MB
-- **Network Adapter**: Host-only Adapter (`vboxnet0`)
+- **Network Adapter**: Host-only Adapter(`vboxnet0`)
 
 ### IMPORTANT: Host-Only Network
 Ensure your VirtualBox Host-Only Network is configured:
