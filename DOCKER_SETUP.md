@@ -7,7 +7,7 @@ This setup uses **Cuckoo 3** (Beta) because standard Cuckoo 2.x does not support
 
 ## Prerequisites
 1.  **Docker Desktop** installed on Windows or Docker Engine on Linux.
-2.  **VirtualBox** installed on your host (tested with 6.1/7.0).
+2.  **VirtualBox** installed on your host (tested with 6.1/7.0)
 
 ---
 
