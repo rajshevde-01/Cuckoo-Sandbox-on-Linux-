@@ -1,0 +1,37 @@
+name: Daily README Update
+
+on:
+  schedule:
+    - cron: '0 0 * * *'   # Runs every day at midnight UTC
+  workflow_dispatch:        # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Increment activity counter
+        run: |
+          # Read the current counter value
+          CURRENT=$(grep -oP '(?<=Activity Counter: )\d+' README.md)
+          NEW=$((CURRENT + 1))
+
+          # Update the badge URL and the counter comment
+          sed -i "s|Activity%20Counter-[0-9]*-blue|Activity%20Counter-${NEW}-blue|g" README.md
+          sed -i "s|<!-- Activity Counter: [0-9]* -->|<!-- Activity Counter: ${NEW} -->|" README.md
+
+          echo "Counter updated from $CURRENT to $NEW"
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: daily activity update [skip ci]"
+          git push
