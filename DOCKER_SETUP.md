@@ -2,7 +2,7 @@
 
 This guide details how to run Cuckoo Sandbox (v3 Beta) in a Docker container.
 
-## ⚠️ Important Not
+## ⚠️ Important Note
 This setup uses **Cuckoo 3** (Beta) because standard Cuckoo 2.x does not support Python 3. The Dockerfile compiles Cuckoo 3 from source.
 
 ## Prerequisites
